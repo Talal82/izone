@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="index.html">I zone Electromechanical</a></li><span>/</span>
+                        <li><a href="{{ route('index') }}">I zone Electromechanical</a></li><span>/</span>
                         <li>Careers</li>
                     </ul>
                 </div>

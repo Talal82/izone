@@ -3,6 +3,12 @@
     <head>
         {{-- head section --}}
         @include('partials._head')
+        <style>
+            #map{
+                height: 200px;
+                width: 350px;
+            }
+        </style>
 
     </head>
 

@@ -21,5 +21,10 @@ Route::get('careers', 'PagesController@getCareers') -> name('careers');
 Route::get('contact', 'PagesController@getContact') -> name('contact');
 
 //navigation sub menu routes
-Route::get('services/service-large', 'PagesController@getLargeService') -> name('view_service');
-Route::get('projects/project-large', 'PagesController@getLargeProject') -> name('view_project');
+Route::get('service-large{id}', 'PagesController@getLargeService') -> name('view_service');
+Route::get('project-large{id}', 'PagesController@getLargeProject') -> name('view_project');
+Route::get('completed-projects', 'PagesController@getCompletedProjects') -> name('completed_projects');
+Route::get('ongoing-projects', 'PagesController@getOngoingProjects') -> name('ongoing_projects');
+
+//search route
+Route::get('search','SearchController@search') -> name('search');
