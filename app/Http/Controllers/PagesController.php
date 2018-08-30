@@ -60,6 +60,12 @@ class PagesController extends Controller
         $galleryImages = GalleryImage::all();
     	return view('pages.gallery') -> withGalleryImages($galleryImages);
     }
+
+    public function getCertificates(){
+        $certificates = Certificate::all();
+        return view('pages.certificates') -> withCertificates($certificates);
+    }
+
     public function getCareers(){
     	return view('pages.careers');
     }

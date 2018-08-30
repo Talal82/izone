@@ -32,9 +32,13 @@
         <li class="header">CMS</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="{{ Request::route()->getName() == ('info.index' || 'info.create' || 'info.edit')? "active":"" }}"><a href="{{ route('info.index') }}"><i class="fa fa-link"></i> <span>Info</span></a></li>
-        <li class="{{ Request::route()->getName() == ('office.index' || 'office.create' || 'office.edit' || 'office.view')? "active":"" }}"><a href="{{ route('office.index') }}"><i class="fa fa-link"></i> <span>Office</span></a></li>
+        <li class=""><a href="{{ route('office.index') }}"><i class="fa fa-link"></i> <span>Office</span></a></li>
         <li><a href="{{ route('banner.index') }}"><i class="fa fa-link"></i> <span>Banners</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li><a href="{{ route('value.index') }}"><i class="fa fa-link"></i> <span>Values</span></a></li>
+        <li><a href="{{ route('benefit.index') }}"><i class="fa fa-link"></i> <span>Benefits</span></a></li>
+        <li><a href="{{ route('about.index') }}"><i class="fa fa-link"></i> <span>About Us</span></a></li>
+        <li><a href="{{ route('gallery.index') }}"><i class="fa fa-link"></i> <span>Gallery</span></a></li>
+        <li><a href="{{ route('certificate.index') }}"><i class="fa fa-link"></i> <span>Certificates</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

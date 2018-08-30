@@ -180,7 +180,7 @@
 							<div class="sb-icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
 							<div class="sb-text">
 								<h2>{{ $benefit -> name }}</h2>
-								<p>{{ $benefit -> detail }}</p>
+								{!! $benefit -> detail !!}
 							</div>
 						</li>
 						@endforeach
@@ -212,7 +212,7 @@
 									<div class="item active">
 										<div class="cert-img">
 											<img src="images/{{ $certificates[$i] -> image }}" alt="image" />
-											<a href="certificates.html"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
+											<a href="{{ route('certificates') }}"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
 										</div>
 									</div>
 									<?php 
@@ -221,7 +221,7 @@
 									<div class="item active">
 										<div class="cert-img">
 											<img src="images/{{ $certificates[$i] -> image }}" alt="image" />
-											<a href="certificates.html"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
+											<a href="{{ route('certificates') }}"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
 										</div>
 									</div>
 									<?php 
@@ -230,7 +230,7 @@
 									<div class="item active">
 										<div class="cert-img">
 											<img src="images/{{ $certificates[$i] -> image }}" alt="image" />
-											<a href="certificates.html"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
+											<a href="{{ route('certificates') }}"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
 										</div>
 									</div>
 								@else
@@ -238,7 +238,7 @@
 										<div class="cert-img">
 											<img src="images/{{ $certificates[$i] -> image }}" alt="image" />
 
-											<a href="certificates.html"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
+											<a href="{{ route('certificates') }}"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
 										</div>
 									</div>
 									<?php 
@@ -248,7 +248,7 @@
 										<div class="cert-img">
 											<img src="images/{{ $certificates[$i] -> image }}" alt="image" />
 
-											<a href="certificates.html"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
+											<a href="{{ route('certificates') }}"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
 										</div>
 									</div>
 									<?php 
@@ -258,7 +258,7 @@
 										<div class="cert-img">
 											<img src="images/{{ $certificates[$i] -> image }}" alt="image" />
 
-											<a href="certificates.html"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
+											<a href="{{ route('certificates') }}"><div class="hvr-cert"><i class="fa fa-search-plus" aria-hidden="true"></i></div></a>
 										</div>
 									</div>
 								@endif

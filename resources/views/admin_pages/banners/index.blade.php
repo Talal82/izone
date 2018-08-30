@@ -41,8 +41,12 @@
 			<p>{{ $banner -> detail }}</p>
 		</div>
 		<div class="col-md-2 float-right margin-all text-center">
-			<a href="" class="btn btn-default btn-block">View</a>
-			<a href="" class="btn btn-danger btn-block">Delete</a>
+			<a href="{{ route('banner.show',[$banner -> id]) }}" class="btn btn-default btn-block">View</a>
+			{{ Form::open(['route' => ['banner.destroy', $banner -> id], 'method' => 'DELETE']) }}
+
+			{{Form::submit('Delete', ['class' => 'btn btn-danger btn-block'])}}
+
+			{{ Form::close() }}
 		</div>
 		</div>
 		@endforeach

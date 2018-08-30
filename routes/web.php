@@ -16,9 +16,9 @@ Route::get('/', 'PagesController@getindex') -> name('index');
 Route::get('aboutus', 'PagesController@getAbout') -> name('about');
 Route::get('services', 'PagesController@getServices') -> name('services');
 Route::get('projects', 'PagesController@getProjects') -> name('projects');
-Route::get('gallery', 'PagesController@getGallery') -> name('gallery');
 Route::get('careers', 'PagesController@getCareers') -> name('careers');
 Route::get('contact', 'PagesController@getContact') -> name('contact');
+Route::get('certificates', 'PagesController@getCertificates') -> name('certificates');
 
 //navigation sub menu routes
 Route::get('service-large{id}', 'PagesController@getLargeService') -> name('view_service');
@@ -40,6 +40,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 //admin panel routes
 
 //register admin controller routes
-Route::resource('info', 'InfoController');
+Route::resource('info', 'InfoController', ['except' => ['show']]);
 Route::resource('office', 'OfficeController');
-Route::resource('banner', 'BannerController');
+Route::resource('banner', 'BannerController', ['except' => ['create']]);
+Route::resource('value' , 'ValueController', ['except' => ['create','show']]);
+Route::resource('benefit', 'BenefitController', ['except' => ['create','show']]);
+Route::resource('about', 'AboutController', ['except' => ['create','store','show','edit','destroy']]);
+Route::resource('gallery', 'GalleryController', ['except' => ['create','show','edit','update']]);
+Route::resource('certificate', 'CertificateController', ['except' => ['create','show','edit','update']]);
+
+
+
+Route::get('galleryimages', 'PagesController@getGallery') -> name('gallery');
