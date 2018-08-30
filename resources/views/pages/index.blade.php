@@ -21,7 +21,7 @@
 			@foreach( $banners as $banner)
 			@if($loop -> first)
 			<div class="item active">
-				<img src="images/{{ $banner -> image }}" alt="..." class="img-responsive center-block">
+				<img src="images/{{ $banner -> image }}" height="500" alt="..." class="img-responsive center-block">
 				<div class="banner-text">
 					<h2>{{ $banner -> name }}</h2>
 					<p>{{ $banner -> detail }}</p>

@@ -78,22 +78,23 @@
                     <h2>Feedback Form</h2>
                     <p>Please fill up the following fields</p>
 
-                    <form>
+                    <form action="{{ route('contact.post') }}" method="POST">
+                        {{ csrf_field() }}
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" placeholder="name">
+                                <input type="text" name="name" placeholder="name">
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="email" placeholder="email">
+                                <input type="email" name="email" placeholder="email">
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" placeholder="phone">
+                                <input type="text" name="phone" placeholder="phone">
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" placeholder="Subject">
+                                <input type="text" name="subject" placeholder="Subject">
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <textarea rows="7" placeholder="Questions or Comments"></textarea>
+                                <textarea rows="7" name="body" placeholder="Questions or Comments"></textarea>
                                 
                                 <button type="submit">submit</button>
                                 <button type="reset">clear</button>

@@ -8,24 +8,23 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-
   </div>
-
-
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
+      
       <li class=" {{ Request::route()->getName() == 'index' ? "selected": "" }} "><a href="{{ route('index') }}">home</a></li>
       <li class=" {{ Request::route()->getName() == 'about' ? "selected": "" }} "><a href="{{ route('about') }}">About Us</a></li>
-      <li class="dropdown"><a href="{{ route('services') }}" class="dropdown-toggle" 
-        data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">our services <span class="caret"></span></a>
+      <li class="dropdown {{ ((Request::route()->getName() == 'services') || (Request::route()->getName() == 'view_service')) ? "selected": ""}}"><a href="{{ route('services') }}" class="dropdown-toggle" 
+        data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">our serrvices <span class="caret"></span></a>
         <ul class="dropdown-menu">
           @foreach($services as $service)
           <li><a href="{{ route('view_service',[$service -> id]) }}">{{ $service -> name }}</a></li>
           @endforeach
         </ul>
+        
       </li>
-      <li class="dropdown"><a href="{{ route('projects') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">our Projects <span class="caret"></span></a>
+      <li class="dropdown {{ ((Request::route()->getName() == 'projects') || (Request::route() -> getName() == 'view_project')) ? "selected": "" }}"><a href="{{ route('projects') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">our Projects <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="{{ route('completed_projects') }}">Completed Projects</a></li>
           <li><a href="{{ route('ongoing_projects') }}">Ongoing Projects</a></li>
@@ -50,13 +49,18 @@
           </div>
         </ul>
       </div></li>
+      @guest
+      <li class="nav-item  {{ Request::route()->getName() == 'login' ? "selected": "" }} ">
+        <a class="nav-link" href="{{ route('login') }}"> Admin Login</a>
+      </li>
+      @else
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('home') }}">Dashboard</a>
+      </li>
+      @endguest
     </ul>
   </div>
 
-
-
-
-  
 </nav>
 <div class="clearfix"></div>
 </div>

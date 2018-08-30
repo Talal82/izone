@@ -28,3 +28,18 @@ Route::get('ongoing-projects', 'PagesController@getOngoingProjects') -> name('on
 
 //search route
 Route::get('search','SearchController@search') -> name('search');
+
+
+//post contact route
+Route::post('contact', 'PagesController@postContact') -> name('contact.post');
+
+//authentication routes
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
+//admin panel routes
+
+//register admin controller routes
+Route::resource('info', 'InfoController');
+Route::resource('office', 'OfficeController');
+Route::resource('banner', 'BannerController');

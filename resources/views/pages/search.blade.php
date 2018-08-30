@@ -56,8 +56,10 @@
 </section>
 
 @else
+<div class="text-center alert-danger" style="margin-bottom: 25px;">
+  <h1>No Results Found</h1>
+</div>
 
-<h1>No Results Found</h1>
 
 @endif
 

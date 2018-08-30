@@ -13,6 +13,8 @@ use App\Project;
 use App\About;
 use App\Introduction;
 use App\Value;
+use Session;
+use Mail;
 
 class PagesController extends Controller
 {
@@ -65,6 +67,32 @@ class PagesController extends Controller
     public function getContact(){
         $offices = Office::all();
     	return view('pages.contact')->withOffices($offices);
+    }
+
+    public function postContact(Request $request){
+        $this -> validate($request, [
+            'name' => 'required | min:5 | max:15',
+            'email' => 'required | email',
+            'phone' => 'required',
+            'subject' => 'required | min:5',
+            'body' => 'required | min:10 | max:1000'
+        ]);
+
+        $data = array(
+            'name' => $request -> name,
+            'email' => $request -> email,
+            'phone' => $request -> phone,
+            'subject' => $request -> subject,
+            'body' => $request -> body
+        );
+
+        Mail::send('emails.contact', $data, function($message) use ($data){
+            $message -> from($data['email']);
+            $message -> to('talalanwer2424@gmail.com');
+            $message -> subject($data['subject']);
+        });
+        Session::flash('success','Mail Sent Successfully!');
+        return redirect()->route('contact');
     }
 
     public function getLargeService($id){
