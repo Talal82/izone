@@ -41,7 +41,7 @@
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <div class="larg-pro">
-                    <figure><img src="images/project-large.jpg" alt="image" class="img-responsive center-block" id="larg-img"></figure>
+                    <figure><img src="{{ asset('images/'.$project -> main_image) }}" alt="image" class="img-responsive center-block" id="larg-img"></figure>
                 </div>
                 <div class="gallery">
                     <div class="owl-demo2 owl-carousel owl-theme">

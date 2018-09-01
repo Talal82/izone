@@ -26,7 +26,7 @@
               <!-- The user image in the navbar-->
               {{-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> --}}
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span>{{ Auth::user() -> name }}</span>
+              <span>Hello! {{ Auth::user() -> name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -41,9 +41,9 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
+                {{-- <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
+                </div> --}}
                 <div class="pull-right">
                   <form id="logout-form" action="{{ route('logout') }}" method="POST">
                    @csrf

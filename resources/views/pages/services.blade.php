@@ -34,9 +34,9 @@
                <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="services-box">
                          <div class="services-img">
-                              <a href="services-large.html"><img src="images/{{ $service -> image }}" alt="image" class="img-responsive center-block"></a>
+                              <a href="{{ route('view_service', [$service -> id]) }}"><img src="images/{{ $service -> image }}" alt="image" class="img-responsive center-block"></a>
                               <div class="servies-icon">
-                                   <a href="#"><img src="images/{{ $service -> visible_icon }}" alt="image" class="img-responsive center-block"></a>
+                                   <a href=""><img src="images/{{ $service -> transparent_icon }}" alt="image" class="img-responsive center-block"></a>
                               </div>
                          </div>
                          <div class="services-detail">

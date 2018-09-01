@@ -1,3 +1,4 @@
+
 <aside class="main-sidebar">
 
   <!-- sidebar: style can be found in sidebar.less -->
@@ -31,15 +32,29 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">CMS</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="{{ Request::route()->getName() == ('info.index' || 'info.create' || 'info.edit')? "active":"" }}"><a href="{{ route('info.index') }}"><i class="fa fa-link"></i> <span>Info</span></a></li>
-        <li class=""><a href="{{ route('office.index') }}"><i class="fa fa-link"></i> <span>Office</span></a></li>
-        <li><a href="{{ route('banner.index') }}"><i class="fa fa-link"></i> <span>Banners</span></a></li>
-        <li><a href="{{ route('value.index') }}"><i class="fa fa-link"></i> <span>Values</span></a></li>
-        <li><a href="{{ route('benefit.index') }}"><i class="fa fa-link"></i> <span>Benefits</span></a></li>
-        <li><a href="{{ route('about.index') }}"><i class="fa fa-link"></i> <span>About Us</span></a></li>
-        <li><a href="{{ route('gallery.index') }}"><i class="fa fa-link"></i> <span>Gallery</span></a></li>
-        <li><a href="{{ route('certificate.index') }}"><i class="fa fa-link"></i> <span>Certificates</span></a></li>
-        <li class="treeview">
+        <li class="{{ Helper::areActiveRoutes(['info.index', 'info.create', 'info.show','info.edit']) }}"><a href="{{ route('info.index') }}"><i class="fa fa-link"></i> <span>Info</span></a></li>
+
+        <li class="{{ Helper::areActiveRoutes(['office.index', 'office.create', 'office.show','office.edit']) }}"><a href="{{ route('office.index') }}"><i class="fa fa-link"></i> <span>Office</span></a></li>
+
+        <li class="{{ Helper::areActiveRoutes(['banner.index', 'banner.create', 'banner.show','banner.edit']) }}"><a href="{{ route('banner.index') }}"><i class="fa fa-link"></i> <span>Banners</span></a></li>
+
+        <li class="{{ Helper::areActiveRoutes(['value.index', 'value.create', 'value.show','value.edit']) }}"><a href="{{ route('value.index') }}"><i class="fa fa-link"></i> <span>Values</span></a></li>
+
+        <li class="{{ Helper::areActiveRoutes(['benefit.index', 'benefit.create', 'benefit.show','benefit.edit']) }}"><a href="{{ route('benefit.index') }}"><i class="fa fa-link"></i> <span>Benefits</span></a></li>
+
+        <li class="{{ Helper::areActiveRoutes(['about.index', 'about.create', 'about.show','about.edit']) }}"><a href="{{ route('about.index') }}"><i class="fa fa-link"></i> <span>About Us</span></a></li>
+
+        <li class="{{ Helper::areActiveRoutes(['gallery.index', 'gallery.create', 'gallery.show','gallery.edit']) }}"><a href="{{ route('gallery.index') }}"><i class="fa fa-link"></i> <span>Gallery</span></a></li>
+
+        <li class="{{ Helper::areActiveRoutes(['certificate.index', 'certificate.create', 'certificate.show','certificate.edit']) }}"><a href="{{ route('certificate.index') }}"><i class="fa fa-link"></i> <span>Certificates</span></a></li>
+
+        <li class="{{ Helper::areActiveRoutes(['service.index', 'service.create', 'service.show','service.edit']) }}"><a href="{{ route('service.index') }}"><i class="fa fa-link"></i> <span>Services</span></a></li>
+
+        <li class="{{ Helper::areActiveRoutes(['project.index', 'project.create', 'project.show','project.edit']) }}"><a href="{{ route('project.index') }}"><i class="fa fa-link"></i> <span>Projects</span></a></li>
+
+
+
+        {{-- <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -49,7 +64,7 @@
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
-        </li>
+        </li> --}}
       </ul>
       <!-- /.sidebar-menu -->
     </section>

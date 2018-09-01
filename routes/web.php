@@ -11,14 +11,7 @@
 |
 */
 
-// navigation routes
-Route::get('/', 'PagesController@getindex') -> name('index');
-Route::get('aboutus', 'PagesController@getAbout') -> name('about');
-Route::get('services', 'PagesController@getServices') -> name('services');
-Route::get('projects', 'PagesController@getProjects') -> name('projects');
-Route::get('careers', 'PagesController@getCareers') -> name('careers');
-Route::get('contact', 'PagesController@getContact') -> name('contact');
-Route::get('certificates', 'PagesController@getCertificates') -> name('certificates');
+
 
 //navigation sub menu routes
 Route::get('service-large{id}', 'PagesController@getLargeService') -> name('view_service');
@@ -48,7 +41,17 @@ Route::resource('benefit', 'BenefitController', ['except' => ['create','show']])
 Route::resource('about', 'AboutController', ['except' => ['create','store','show','edit','destroy']]);
 Route::resource('gallery', 'GalleryController', ['except' => ['create','show','edit','update']]);
 Route::resource('certificate', 'CertificateController', ['except' => ['create','show','edit','update']]);
+Route::resource('service', 'ServiceController');
+Route::resource('project', 'ProjectController');
 
 
-
+//it has to be under resources.. otherwise some of them will not work
+// navigation routes
+Route::get('/', 'PagesController@getindex') -> name('index');
+Route::get('aboutus', 'PagesController@getAbout') -> name('about');
+Route::get('services', 'PagesController@getServices') -> name('services');
+Route::get('projects', 'PagesController@getProjects') -> name('projects');
+Route::get('careers', 'PagesController@getCareers') -> name('careers');
+Route::get('contact', 'PagesController@getContact') -> name('contact');
+Route::get('certificates', 'PagesController@getCertificates') -> name('certificates');
 Route::get('galleryimages', 'PagesController@getGallery') -> name('gallery');

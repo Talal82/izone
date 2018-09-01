@@ -21,18 +21,13 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength('191');
 
 
-        //share header and footer with all views        
+        //share header/footer/social-icons and services with all views        
         $headerInfo = Info::where('type', 'header')->first();
         $footerInfo = Info::where('type', 'footer')->first();
         $socialIcons = SocialIcon::all();
         $services = Service::all();
-
-
         View::share(['headerInfo' => $headerInfo, 'footerInfo' => $footerInfo, 'socialIcons' => $socialIcons, 'services' => $services]);
 
-        // View::composer(['partials._header'], function ($view) {
-        // $view->with('headerInfo', $headerInfo); // bind data to view
-        // });
     }
 
     /**

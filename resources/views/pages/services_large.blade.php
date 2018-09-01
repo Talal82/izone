@@ -40,7 +40,7 @@
      </div>
      <div class="col-md-6 col-sm-6 col-xs-12">
      <div class="service-img">
-     <figure><img src="images/{{ $service -> image }}" alt="image" class="img-responsive center-block"></figure>
+     <figure><img src="{{ asset('images/'.$service -> image) }}" alt="image" class="img-responsive center-block"></figure>
      </div>
      </div>
      </div>
