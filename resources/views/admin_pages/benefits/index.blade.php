@@ -4,6 +4,8 @@
 
 @section('page_title', 'Our Benefits')
 
+@section('breadcrumb', 'benefit')
+
 @section('stylesheets')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">

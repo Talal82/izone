@@ -4,6 +4,8 @@
 
 @section('page_title', 'Create Information')
 
+@section('breadcrumb', 'contact info')
+
 @section('stylesheets')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">

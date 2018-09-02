@@ -4,6 +4,8 @@
 
 @section('page_title', 'View Office')
 
+@section('breadcrumb', 'offices')
+
 @section('stylesheets')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">

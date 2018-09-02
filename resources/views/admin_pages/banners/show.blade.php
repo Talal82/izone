@@ -4,6 +4,8 @@
 
 @section('page_title', 'View Banner')
 
+@section('breadcrumb', 'banner')
+
 @section('stylesheets')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">

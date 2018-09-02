@@ -4,6 +4,8 @@
 
 @section('page_title', 'Create Project')
 
+@section('breadcrumb', 'projects')
+
 @section('stylesheets')
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">

@@ -4,6 +4,8 @@
 
 @section('page_title', 'Informations')
 
+@section('breadcrumb', 'contact info')
+
 @section('stylesheets')
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">
@@ -11,6 +13,7 @@
 @endsection
 
 @section('content')
+
 <div class="box box-primary">
 	<div class="row">
 		<div class="col-md-12">
@@ -49,4 +52,5 @@
 		</div>
 	</div>
 </div>
+
 @endsection

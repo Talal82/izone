@@ -4,6 +4,8 @@
 
 @section('page_title', 'Edit About Us Information')
 
+@section('breadcrumb', 'about us')
+
 @section('stylesheets')
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">
@@ -17,6 +19,7 @@
 @endsection
 
 @section('content')
+
 <div class="box box-primary">
 	<div class="row  margin-left-10 margin-right-10">
 		<div class="col-md-12">

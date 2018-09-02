@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      Designed & Devoleped By: Tornado.ae
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>&copy; 2017-2018 <a href="{{ route('index') }}">Izone</a>.</strong> All rights reserved.
   </footer>

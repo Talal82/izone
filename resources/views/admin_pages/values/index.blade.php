@@ -4,6 +4,8 @@
 
 @section('page_title', 'Our Values')
 
+@section('breadcrumb', 'values')
+
 @section('stylesheets')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">

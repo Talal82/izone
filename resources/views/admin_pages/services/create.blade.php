@@ -4,6 +4,8 @@
 
 @section('page_title', 'Create Service')
 
+@section('breadcrumb', 'services')
+
 @section('stylesheets')
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">
