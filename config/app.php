@@ -148,6 +148,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class, //laravel form collective provider
         Intervention\Image\ImageServiceProvider::class, //intervention image library provider
+        Brian2694\Toastr\ToastrServiceProvider::class, //Toastr package provider
 
         /*
          * Package Service Providers...
@@ -215,6 +216,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'MenuHelper' => App\Helpers\MenuHelper::class,
         'ConfirmBox' => App\Helpers\ConfirmBox::class,
+        'Toastr'  => Brian2694\Toastr\Facades\Toastr::class, //Toastr facade 
     ],
 
 ];

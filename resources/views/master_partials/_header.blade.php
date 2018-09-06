@@ -1,60 +1,60 @@
-<!-- Main Header -->
-  <header class="main-header">
+Top Bar Start -->
+<div class="topbar">
 
-    <!-- Logo -->
-    <a href="{{ route('index') }}" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>IZ</b></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>IZone</b> Mechanics</span>
-    </a>
+    <!-- LOGO -->
+    <div class="topbar-left">
+        <a href="{{ route('home') }}" class="logo"><span>Izone <span>Mechanics</span></span><i class="mdi mdi-layers"></i></a>
+    </div>
 
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
+    <!-- Button mobile view to collapse sidebar menu -->
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
 
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              {{-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> --}}
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span>Hello! {{ Auth::user() -> name }}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                {{-- <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"> --}}
-
-                <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-                <p>Email: <u>{{ Auth::user() -> email }}</u></p>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                {{-- <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div> --}}
-                <div class="pull-right">
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                   @csrf
-                   <button type="submit" class="btn btn-default btn-flat">Sign Out</button>
-                 </form>
-                 {{-- <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Sign out</a> --}}
-               </div>
-              </li>
+            <!-- Page title -->
+            <ul class="nav navbar-nav list-inline navbar-left">
+                <li class="list-inline-item">
+                    <button class="button-menu-mobile open-left">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                </li>
+                <li class="list-inline-item">
+                    <h4 class="page-title">Dashboard</h4>
+                </li>
             </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+
+            {{-- <nav class="navbar-custom">
+
+                <ul class="list-unstyled topbar-right-menu float-right mb-0">
+
+                    <li>
+                        <!-- Notification -->
+                        <div class="notification-box">
+                            <ul class="list-inline mb-0">
+                                <li>
+                                    <a href="javascript:void(0);" class="right-bar-toggle">
+                                        <i class="mdi mdi-bell-outline noti-icon"></i>
+                                    </a>
+                                    <div class="noti-dot">
+                                        <span class="dot"></span>
+                                        <span class="pulse"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Notification bar -->
+                    </li>
+
+                    <li class="hide-phone">
+                        <form class="app-search">
+                            <input type="text" placeholder="Search..."
+                            class="form-control">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </li>
+
+                </ul>
+            </nav> --}}
+        </div><!-- end container -->
+    </div><!-- end navbar -->
+</div>
+            <!-- Top Bar End

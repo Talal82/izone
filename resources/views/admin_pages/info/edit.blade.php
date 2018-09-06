@@ -2,9 +2,9 @@
 
 @section('title', 'Create Information')
 
-@section('page_title', 'Create Information')
+@section('breadcrumb-header', 'Information')
 
-@section('breadcrumb', 'contact info')
+@section('breadcrumb-detail', 'Edit')
 
 @section('stylesheets')
 

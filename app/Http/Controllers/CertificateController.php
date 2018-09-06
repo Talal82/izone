@@ -20,7 +20,7 @@ class CertificateController extends Controller
      */
     public function index()
     {
-        $certificates = Certificate::paginate(10);
+        $certificates = Certificate::paginate(5);
         return view('admin_pages.certificates.index') -> withCertificates($certificates);
     }
 

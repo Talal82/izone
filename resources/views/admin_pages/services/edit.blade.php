@@ -2,9 +2,9 @@
 
 @section('title', 'Edit Service Info')
 
-@section('page_title', 'Edit Service Information')
+@section('breadcrumb-header', 'Services')
 
-@section('breadcrumb', 'services')
+@section('breadcrumb-detail', 'Edit')
 
 @section('stylesheets')
 

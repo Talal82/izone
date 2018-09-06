@@ -2,9 +2,9 @@
 
 @section('title', 'Create Service')
 
-@section('page_title', 'Create Service')
+@section('breadcrumb-header', 'Services')
 
-@section('breadcrumb', 'services')
+@section('breadcrumb-detail', 'Edit')
 
 @section('stylesheets')
 
@@ -19,7 +19,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-6 offset-3">
 			{!! Form::open(['route' => 'service.store', 'method' => 'POST', 'files' => true]) !!}

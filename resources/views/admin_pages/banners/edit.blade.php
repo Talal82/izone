@@ -2,9 +2,9 @@
 
 @section('title', 'Edit Banner Info')
 
-@section('page_title', 'Edit Banner')
+@section('breadcrumb-header', 'Banner')
 
-@section('breadcrumb', 'banner')
+@section('breadcrumb-detail', 'Edit')
 
 @section('stylesheets')
 

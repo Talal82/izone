@@ -2,9 +2,9 @@
 
 @section('title', 'Values')
 
-@section('page_title', 'Our Values')
+@section('breadcrumb-header', 'Values')
 
-@section('breadcrumb', 'values')
+@section('breadcrumb-detail', 'All Values')
 
 @section('stylesheets')
 
@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-6 offset-2">
 			{!! Form::open(['route' => 'value.store', 'method' => 'POST']) !!}
@@ -38,7 +38,7 @@
 	</div>
 </div>
 <br><br>
-<div class="box box-primary">
+<div class="box box-warning">
 		@foreach($values as $value)
 		<div class="row"">
 		<div class="col-md-8 margin-all">

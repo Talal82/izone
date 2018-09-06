@@ -2,9 +2,9 @@
 
 @section('title', 'Information Index')
 
-@section('page_title', 'Informations')
+@section('breadcrumb-header', 'Information')
 
-@section('breadcrumb', 'contact info')
+@section('breadcrumb-detail', 'Index')
 
 @section('stylesheets')
 
@@ -14,7 +14,7 @@
 
 @section('content')
 
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-12">
 			<a href="{{ route('info.create') }}" class="btn btn-lg btn-primary margin-vertical-10 float-right">Create new Info</a>
@@ -37,11 +37,13 @@
 						<td>{{ $info -> fax }}</td>
 						<td>{{ $info -> type }}</td>
 						<td>{{ $info -> address }}</td>
-						<td style="width: 100px;">
-							<a href="{{ route('info.edit', [$info -> id]) }}" class="btn btn-primary btn-xs float-left">Edit</a>
+						<td style="width: 120px;">
+							<a href="{{ route('info.edit', [$info -> id]) }}" class="btn btn-primary btn-xs float-left"><i class="fa fa-pencil-square fas"></i> Edit</a>
 							{{ Form::open(['route' => ['info.destroy', $info -> id], 'method' => 'DELETE']) }}
 
-							{{Form::submit('Delete', ['class' => 'btn btn-danger btn-xs float-left'])}}
+							<button type="submit" class="btn btn-danger btn-xs">
+								<i class="fa fa-trash"></i> Delete
+							</button>
 
 							{{ Form::close() }}
 						</td>

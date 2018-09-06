@@ -2,9 +2,9 @@
 
 @section('title', 'Home Page Banners')
 
-@section('page_title', 'All Banners')
+@section('breadcrumb-header', 'Banners')
 
-@section('breadcrumb', 'banner')
+@section('breadcrumb-detail', 'Index')
 
 @section('stylesheets')
 
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-6 offset-2">
 			{!! Form::open(['route' => 'banner.store', 'method' => 'POST', 'files' => true]) !!}
@@ -34,7 +34,7 @@
 	</div>
 </div>
 <br><br>
-<div class="box box-primary">
+<div class="box box-warning">
 		@foreach($banners as $banner)
 		<div class="row"">
 		<div class="col-md-8 margin-all"">

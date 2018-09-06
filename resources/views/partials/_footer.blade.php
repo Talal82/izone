@@ -49,7 +49,9 @@
                <div class="s-icon">
                    <ul>
                     @foreach($socialIcons as $icon)
+                      @if($icon -> link != '')
                        <li><a href="{{ $icon -> link }}" target="_blank"><i class="fa {{ $icon -> class_name }}" aria-hidden="true"></i></a></li>
+                      @endif
                     @endforeach
                    </ul>
                </div>

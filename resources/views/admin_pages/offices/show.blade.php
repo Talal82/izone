@@ -2,9 +2,9 @@
 
 @section('title', 'View Office')
 
-@section('page_title', 'View Office')
+@section('breadcrumb-header', 'Offices')
 
-@section('breadcrumb', 'offices')
+@section('breadcrumb-detail', 'View')
 
 @section('stylesheets')
 
@@ -14,7 +14,7 @@
 
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="col-md-8">

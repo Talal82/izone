@@ -2,9 +2,9 @@
 
 @section('title', 'Offices')
 
-@section('page_title', 'Offices')
+@section('breadcrumb-header', 'Offices')
 
-@section('breadcrumb', 'offices')
+@section('breadcrumb-detail', 'All Offices')
 
 @section('stylesheets')
 
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-12">
 			<a href="{{ route('office.create') }}" class="btn btn-lg btn-primary margin-vertical-10 float-right">Create new Office</a>

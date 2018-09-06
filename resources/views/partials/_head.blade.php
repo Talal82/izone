@@ -10,12 +10,12 @@
         <title>Izone ElectroMechanical @yield('title')</title>
         <!-- stylesheets added -->
         
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
         <link href="https://fonts.googleapis.com/css?family=Exo:400,500" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/main.css" />
-        <link rel="stylesheet" type="text/css" href="css/mediaquries.css" />
-        <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
-        <link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/mediaquries.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.theme.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
 
         @yield('stylesheets')

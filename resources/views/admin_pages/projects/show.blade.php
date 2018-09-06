@@ -2,9 +2,9 @@
 
 @section('title', 'View Project')
 
-@section('page_title', 'View Project')
+@section('breadcrumb-header', 'Projects')
 
-@section('breadcrumb', 'projects')
+@section('breadcrumb-detail', 'View Project')
 
 @section('stylesheets')
 
@@ -14,7 +14,7 @@
 
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="col-md-8 margin-vertical-10">

@@ -102,7 +102,7 @@ class InfoController extends Controller
             'type' => 'required',
             'address' => 'required | min:20 | max:70'
         ));
-        $info = new Info;
+        $info = Info::find($id);
 
         $info -> email = $request -> email;
         $info -> phone = $request -> phone;
@@ -112,7 +112,7 @@ class InfoController extends Controller
 
         $info -> save();
 
-        Session::flash('success', 'Information Created Successfully!');
+        Session::flash('success', 'Information Updated Successfully!');
 
         return redirect() -> route('info.index');
 

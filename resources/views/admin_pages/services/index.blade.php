@@ -2,9 +2,9 @@
 
 @section('title', 'Services')
 
-@section('page_title', 'Our Services')
+@section('breadcrumb-header', 'Services')
 
-@section('breadcrumb', 'services')
+@section('breadcrumb-detail', 'All Services')
 
 @section('stylesheets')
 
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-12">
 			<a href="{{ route('service.create') }}" class="btn btn-lg btn-primary margin-vertical-10 float-right">Create new Service</a>

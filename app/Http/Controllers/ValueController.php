@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Value;
 use Session;
+use Toastr;
 
 class ValueController extends Controller
 {
@@ -52,6 +53,8 @@ class ValueController extends Controller
         $value -> detail = $request -> detail;
 
         $value -> save();
+
+         Toastr::success('Messages in here', 'Title', ["positionClass" => "toast-top-center"]);
 
         Session::flash('success', 'Value Saved Successfully!');
         return redirect() -> route('value.index');

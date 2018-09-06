@@ -2,9 +2,9 @@
 
 @section('title', 'Edit Benefits')
 
-@section('page_title', 'Edit Benefit')
+@section('breadcrumb-header', 'Benefit')
 
-@section('breadcrumb', 'benefit')
+@section('breadcrumb-detail', 'Edit')
 
 @section('stylesheets')
 

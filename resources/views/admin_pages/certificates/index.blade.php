@@ -2,9 +2,9 @@
 
 @section('title', 'Certificate Images')
 
-@section('page_title', 'All Certificates')
+@section('breadcrumb-header', 'Certificates')
 
-@section('breadcrumb', 'certificates')
+@section('breadcrumb-detail', 'Add/Delete')
 
 @section('stylesheets')
 
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-6 offset-2">
 			{!! Form::open(['route' => 'certificate.store', 'method' => 'POST', 'files' => true]) !!}
@@ -28,7 +28,7 @@
 	</div>
 </div>
 <br><br>
-<div class="box box-primary">
+<div class="box box-warning">
 	@foreach($certificates as $certificate)
 	<div class="row"">
 		<div class="col-md-8 margin-all"">

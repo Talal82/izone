@@ -28,21 +28,30 @@ Route::post('contact', 'PagesController@postContact') -> name('contact.post');
 
 //authentication routes
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
-//admin panel routes
 
-//register admin controller routes
-Route::resource('info', 'InfoController', ['except' => ['show']]);
-Route::resource('office', 'OfficeController');
-Route::resource('banner', 'BannerController', ['except' => ['create']]);
-Route::resource('value' , 'ValueController', ['except' => ['create','show']]);
-Route::resource('benefit', 'BenefitController', ['except' => ['create','show']]);
-Route::resource('about', 'AboutController', ['except' => ['create','store','show','edit','destroy']]);
-Route::resource('gallery', 'GalleryController', ['except' => ['create','show','edit','update']]);
-Route::resource('certificate', 'CertificateController', ['except' => ['create','show','edit','update']]);
-Route::resource('service', 'ServiceController');
-Route::resource('project', 'ProjectController');
+
+
+//admin routes
+Route::prefix('admin/') -> group(function(){	Route::resource('info', 'InfoController', ['except' => ['show']]);
+	Route::resource('office', 'OfficeController');
+	Route::resource('banner', 'BannerController', ['except' => ['create']]);
+	Route::resource('value' , 'ValueController', ['except' => ['create','show']]);
+	Route::resource('benefit', 'BenefitController', ['except' => ['create','show']]);
+	Route::resource('about', 'AboutController', ['except' => ['create','store','show','edit','destroy']]);
+	Route::resource('gallery', 'GalleryController', ['except' => ['create','show','edit','update']]);
+	Route::resource('certificate', 'CertificateController', ['except' => ['create','show','edit','update']]);
+	Route::resource('service', 'ServiceController');
+	Route::resource('project', 'ProjectController');
+	Route::get('general/settings', 'GeneralSettingsController@getGeneralSettings') -> name('settings.index');
+	Route::put('general/settings/header/{id}', 'GeneralSettingsController@updateHeaderInfo') -> name('headerinfo.update');
+	Route::put('general/settings/footer/{id}', 'GeneralSettingsController@updateFooterInfo') -> name('footerinfo.update');
+	Route::put('general/settings/social-links', 'GeneralSettingsController@updateSocialLinks') -> name('sociallinks.update');
+	Route::get('settings/accounts', 'GeneralSettingsController@getAccountSettings') -> name('account.index');
+	Route::put('settings/accounts/{id}', 'GeneralSettingsController@updateAccountSettings') -> name('account.update');
+});
+
 
 
 //it has to be under resources.. otherwise some of them will not work

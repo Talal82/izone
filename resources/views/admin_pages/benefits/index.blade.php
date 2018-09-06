@@ -2,9 +2,9 @@
 
 @section('title', 'Benefits')
 
-@section('page_title', 'Our Benefits')
+@section('breadcrumb-header', 'Our Benefits')
 
-@section('breadcrumb', 'benefit')
+@section('breadcrumb-detail', 'Index')
 
 @section('stylesheets')
 
@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-6 offset-2">
 			{!! Form::open(['route' => 'benefit.store', 'method' => 'POST']) !!}
@@ -38,7 +38,7 @@
 	</div>
 </div>
 <br><br>
-<div class="box box-primary">
+<div class="box box-warning">
 		@foreach($benefits as $benefit)
 		<div class="row"">
 		<div class="col-md-8 margin-all">

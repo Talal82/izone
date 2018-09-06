@@ -2,9 +2,9 @@
 
 @section('title', 'Projects')
 
-@section('page_title', 'Our Projects')
+@section('breadcrumb-header', 'Projects')
 
-@section('breadcrumb', 'projects')
+@section('breadcrumb-detail', 'All Projects')
 
 @section('stylesheets')
 
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-12">
 			<a href="{{ route('project.create') }}" class="btn btn-lg btn-primary margin-vertical-10 float-right">Create new Project</a>

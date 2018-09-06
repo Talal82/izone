@@ -2,9 +2,9 @@
 
 @section('title', 'Gallery Images')
 
-@section('page_title', 'All Gallery Images')
+@section('breadcrumb-header', 'Gallery')
 
-@section('breadcrumb', 'gallery')
+@section('breadcrumb-detail', 'Add/Delete Images')
 
 @section('stylesheets')
 
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-6 offset-2">
 			{!! Form::open(['route' => 'gallery.store', 'method' => 'POST', 'files' => true]) !!}
@@ -28,7 +28,7 @@
 	</div>
 </div>
 <br><br>
-<div class="box box-primary">
+<div class="box box-warning">
 	@foreach($galleryImages as $galleryImage)
 	<div class="row"">
 		<div class="col-md-8 margin-all"">

@@ -2,9 +2,9 @@
 
 @section('title', 'Create Project')
 
-@section('page_title', 'Create Project')
+@section('breadcrumb-header', 'Projects')
 
-@section('breadcrumb', 'projects')
+@section('breadcrumb-detail', 'Create')
 
 @section('stylesheets')
 
@@ -19,7 +19,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-6 offset-3">
 			{!! Form::open(['route' => 'project.store', 'method' => 'POST', 'files' => true]) !!}

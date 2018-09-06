@@ -1,75 +1,76 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
 
-<aside class="main-sidebar">
+        <!-- User -->
+        <div class="user-box">
+            <div class="user-img">
+                <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="user-img" title="{{ Auth::user() -> name }}" class="rounded-circle img-thumbnail img-responsive">
+                <div class="user-status offline"><i class="mdi mdi-adjust"></i></div>
+            </div>
+            <h5><a href="#">{{ Auth::user() -> name }}</a> </h5>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="#" >
+                        <i class="mdi mdi-settings"></i>
+                    </a>
+                </li>
 
-  <!-- sidebar: style can be found in sidebar.less -->
-  <section class="sidebar">
+                <li class="list-inline-item">
+                    <a href="#" class="text-custom" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                        <i class="mdi mdi-power"></i>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <!-- End User -->
 
-    <!-- Sidebar user panel (optional) -->
-    <div class="user-panel">
-      <div class="pull-left image">
-        <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
-      </div>
-      <div class="pull-left info">
-        <p>{{ Auth::user() -> name }}</p>
-        <!-- Status -->
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-      </div>
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <ul>
+                <li class="text-muted menu-title">Navigation</li>
+
+                <li>
+                    <a href="{{ route('home') }}" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> CMS</span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('about.index') }}">About</a></li>
+                        <li class="{{ Route::currentRouteName() =='office.create' ? 'active' : '' }}"><a href="{{ route('office.index') }}">offices</a></li>
+                        <li><a href="{{ route('service.index') }}">Services</a></li>
+                        <li><a href="{{ route('project.index') }}">Projects</a></li>
+                        <li><a href="{{ route('banner.index') }}">banners</a></li>
+                        <li><a href="{{ route('benefit.index') }}">benefits</a></li>
+                        <li><a href="{{ route('certificate.index') }}">certificates</a></li>
+                        <li><a href="{{ route('gallery.index') }}">gallerys</a></li>
+                        <li><a href="{{ route('info.index') }}">General Info</a></li>
+                        <li><a href="{{ route('value.index') }}">values</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Settings</span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('settings.index') }}">General Site Settings</a></li>
+                        <li><a href="{{ route('account.index') }}">Account Settings</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <!-- Sidebar -->
+        <div class="clearfix"></div>
+
     </div>
 
-    <!-- search form (Optional) -->
-      {{-- <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-              </button>
-            </span>
-        </div>
-      </form> --}}
-      <!-- /.search form -->
-
-      <!-- Sidebar Menu -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">CMS</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="{{ MenuHelper::areActiveRoutes(['service.index', 'service.create', 'service.show','service.edit']) }}"><a href="{{ route('service.index') }}"><i class="fa fa-link"></i> <span>Services</span></a></li>
-
-        <li class="{{ MenuHelper::areActiveRoutes(['project.index', 'project.create', 'project.show','project.edit']) }}"><a href="{{ route('project.index') }}"><i class="fa fa-link"></i> <span>Projects</span></a></li>
-
-        <li class="{{ MenuHelper::areActiveRoutes(['about.index', 'about.create', 'about.show','about.edit']) }}"><a href="{{ route('about.index') }}"><i class="fa fa-link"></i> <span>About Us</span></a></li>
-
-        <li class="{{ MenuHelper::areActiveRoutes(['info.index', 'info.create', 'info.show','info.edit']) }}"><a href="{{ route('info.index') }}"><i class="fa fa-link"></i> <span>Info</span></a></li>
-
-        <li class="{{ MenuHelper::areActiveRoutes(['office.index', 'office.create', 'office.show','office.edit']) }}"><a href="{{ route('office.index') }}"><i class="fa fa-link"></i> <span>Office</span></a></li>
-
-        <li class="{{ MenuHelper::areActiveRoutes(['banner.index', 'banner.create', 'banner.show','banner.edit']) }}"><a href="{{ route('banner.index') }}"><i class="fa fa-link"></i> <span>Banners</span></a></li>
-
-        <li class="{{ MenuHelper::areActiveRoutes(['value.index', 'value.create', 'value.show','value.edit']) }}"><a href="{{ route('value.index') }}"><i class="fa fa-link"></i> <span>Values</span></a></li>
-
-        <li class="{{ MenuHelper::areActiveRoutes(['benefit.index', 'benefit.create', 'benefit.show','benefit.edit']) }}"><a href="{{ route('benefit.index') }}"><i class="fa fa-link"></i> <span>Benefits</span></a></li>
-
-        <li class="{{ MenuHelper::areActiveRoutes(['gallery.index', 'gallery.create', 'gallery.show','gallery.edit']) }}"><a href="{{ route('gallery.index') }}"><i class="fa fa-link"></i> <span>Gallery</span></a></li>
-
-        <li class="{{ MenuHelper::areActiveRoutes(['certificate.index', 'certificate.create', 'certificate.show','certificate.edit']) }}"><a href="{{ route('certificate.index') }}"><i class="fa fa-link"></i> <span>Certificates</span></a></li>
-
-        
-        
-
-
-
-        {{-- <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li> --}}
-      </ul>
-      <!-- /.sidebar-menu -->
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+</div>
+            <!-- Left Sidebar End -->

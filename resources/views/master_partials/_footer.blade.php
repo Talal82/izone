@@ -1,8 +1,5 @@
-<footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      Designed & Devoleped By: Tornado.ae
-    </div>
-    <!-- Default to the left -->
-    <strong>&copy; 2017-2018 <a href="{{ route('index') }}">Izone</a>.</strong> All rights reserved.
-  </footer>
+
+
+<footer class="footer text-right">
+	2016 - 2018 © Adminto. Coderthemes.com
+</footer>

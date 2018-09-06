@@ -2,9 +2,9 @@
 
 @section('title', 'Edit Values')
 
-@section('page_title', 'Edit Values')
+@section('breadcrumb-header', 'Values')
 
-@section('breadcrumb', 'values')
+@section('breadcrumb-detail', 'Edit')
 
 @section('stylesheets')
 

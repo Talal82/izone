@@ -2,9 +2,9 @@
 
 @section('title', 'Create Information')
 
-@section('page_title', 'Create Information')
+@section('breadcrumb-header', 'Information')
 
-@section('breadcrumb', 'contact info')
+@section('breadcrumb-detail', 'Create')
 
 @section('stylesheets')
 
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div class="box box-primary">
+<div class="box box-warning">
 	<div class="row">
 		<div class="col-md-6 offset-3">
 			{!! Form::open(['route' => 'info.store']) !!}
