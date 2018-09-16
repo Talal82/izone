@@ -4,7 +4,6 @@ namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
-use Session;
 
 trait SendsPasswordResetEmails
 {
@@ -35,14 +34,9 @@ trait SendsPasswordResetEmails
             $request->only('email')
         );
 
-        //customized by me
-        if($response == Password::RESET_LINK_SENT){
-            Session::flash('success', 'Password Recovery link sent to the given email!');
-            return $this->sendResetLinkResponse($response);
-        }
-        else{
-            return $this->sendResetLinkFailedResponse($request, $response);
-        }
+        return $response == Password::RESET_LINK_SENT
+                    ? $this->sendResetLinkResponse($response)
+                    : $this->sendResetLinkFailedResponse($request, $response);
     }
 
     /**

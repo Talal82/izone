@@ -4,10 +4,7 @@
 
 @section('content')
 
-            <div class="text-center">
-                <a href="{{ route('index') }}" class="logo"><span>Izone<span>Mechanics</span></span></a>
-                <h5 class="text-muted m-t-0 font-600">Reset your Password for Admin</h5>
-            </div>
+            
             <div class="m-t-40 card-box">
                 <div class="text-center">
                     <h4 class="text-uppercase font-bold m-b-0">Reset Password</h4>

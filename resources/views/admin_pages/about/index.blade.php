@@ -2,54 +2,85 @@
 
 @section('title', 'About Information')
 
-@section('breadcrumb-header', 'About Us')
-
-@section('breadcrumb-detail', 'Edit')
+@section('page-title', 'About Us')
 
 @section('stylesheets')
 
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">
-	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-  	<script>
-  		tinymce.init({ 
-  			selector:'textarea'
-  		});
-  	</script>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">
 
 @endsection
 
 @section('content')
-
-<div class="box box-warning">
-	<div class="row  margin-left-10 margin-right-10">
 		<div class="col-md-12">
 			{!! Form::model( $about , ['route' => ['about.update', $about->id],  'method' => 'PUT', 'files' => true]) !!}
-				{{ csrf_field() }}
+			{{ csrf_field() }}
+			
+			<div class="form-group">
+			{{ Form::label('title', 'Title:', ['class' => 'margin-vertical-10'])}}
+			{{ Form::text('title', null, array('class' => 'form-control'))}}
+			</div>
 
-			    {{ Form::label('title', 'Title:', ['class' => 'margin-vertical-10'])}}
-			    {{ Form::text('title', null, array('class' => 'form-control'))}}
+			<div class="form-group">
+			{{ Form::label('about_detail', "About Us Detail:", ['class' => 'm-t-10']) }}
+			{{ Form::textarea('about_detail', null, ['class' => 'form-control']) }}
+			</div>
 
-			    {{ Form::label('about_detail', "About Us Detail:", ['class' => 'margin-vertical-10']) }}
-			    {{ Form::textarea('about_detail', null, ['class' => 'form-control']) }}
+			<div class="form-group">
+			{{ Form::label('main_image', "Update Main Image:", ['class' => 'm-t-10']) }}<br>
+			{{ Form::file('main_image', ['class' => 'btn btn-primary btn-flat dropify']) }}
+			</div>
+			
+			<div class="form-group">
+			{{ Form::label('vision_detail', "Our Vision Detail:", ['class' => 'm-t-10']) }}
+			{{ Form::textarea('vision_detail', null, ['class' => 'form-control']) }}
+			</div>
 
-			    {{ Form::label('main_image', "Update Main Image:", ['class' => 'margin-vertical-10']) }}
-			    {{ Form::file('main_image', ['class' => 'btn btn-warning btn-flat']) }}
+			<div class="form-group">
+			{{ Form::label('vision_image', "Update Vision Image:", ['class' => 'm-t-10']) }}<br>
+			{{ Form::file('vision_image', ['class' => 'btn btn-primary btn-flat']) }}
+			</div>
 
-			    {{ Form::label('vision_detail', "Our Vision Detail:", ['class' => 'margin-vertical-10']) }}
-			    {{ Form::textarea('vision_detail', null, ['class' => 'form-control']) }}
+			<div class="form-group">
+			{{ Form::label('mission_detail', "Our Mission Detail:", ['class' => 'm-t-10']) }}
+			{{ Form::textarea('mission_detail', null, ['class' => 'form-control']) }}
+			</div>
 
-			    {{ Form::label('vision_image', "Update Vision Image:", ['class' => 'margin-vertical-10']) }}
-			    {{ Form::file('vision_image', ['class' => 'btn btn-warning btn-flat']) }}
+			<div class="form-group">
+			{{ Form::label('mission_image', "Update Mission Image:", ['class' => 'm-t-10']) }}<br>
+			{{ Form::file('mission_image', ['class' => 'btn btn-primary btn-flat']) }}
+			</div>
 
-			    {{ Form::label('mission_detail', "Our Mission Detail:", ['class' => 'margin-vertical-10']) }}
-			    {{ Form::textarea('mission_detail', null, ['class' => 'form-control']) }}
-
-			    {{ Form::label('mission_image', "Update Mission Image:", ['class' => 'margin-vertical-10']) }}
-			    {{ Form::file('mission_image', ['class' => 'btn btn-warning btn-flat']) }}
-
-			    {{ Form::submit('Update Information', array('class' => 'btn btn-success btn-lg btn-block margin-bottom-10', 'style' => 'margin-top:20px;')) }}
+			{{ Form::submit('Update Information', array('class' => 'btn btn-success btn-lg btn-block margin-bottom-10', 'style' => 'margin-top:20px;')) }}
 			{!! Form::close() !!}
 		</div>
-	</div>
-</div>
+@endsection
+
+@section('scripts')
+
+<script src="{{ asset('assets/plugins/tinymce/tinymce.min.js') }}"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		tinymce.init({
+			selector: "textarea",
+			theme: "modern",
+			height:300,
+			plugins: [
+			"advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+			"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+			"save table contextmenu directionality emoticons template paste textcolor"
+			],
+			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+			style_formats: [
+			{title: 'Bold text', inline: 'b'},
+			{title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+			{title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+			{title: 'Example 1', inline: 'span', classes: 'example1'},
+			{title: 'Example 2', inline: 'span', classes: 'example2'},
+			{title: 'Table styles'},
+			{title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+			]
+		});
+	});
+</script>
+
 @endsection

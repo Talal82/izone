@@ -24,7 +24,9 @@
         <div class="account-pages"></div>
         <div class="clearfix"></div>
         <div class="wrapper-page">
-            @include('partials._messages')
+            <div class="text-center">
+                <a href="{{ route('index') }}" class="logo"><span>Izone<span>Mechanics</span></span></a>
+            </div>
             <!-- page content here -->
             @yield('content')
 

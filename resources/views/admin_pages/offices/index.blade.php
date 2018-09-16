@@ -2,9 +2,8 @@
 
 @section('title', 'Offices')
 
-@section('breadcrumb-header', 'Offices')
+@section('page-title', 'Offices')
 
-@section('breadcrumb-detail', 'All Offices')
 
 @section('stylesheets')
 
@@ -13,11 +12,9 @@
 @endsection
 
 @section('content')
-<div class="box box-warning">
-	<div class="row">
 		<div class="col-md-12">
-			<a href="{{ route('office.create') }}" class="btn btn-lg btn-primary margin-vertical-10 float-right">Create new Office</a>
-			<table class="table">
+			<a href="{{ route('office.create') }}" class="btn btn-primary margin-vertical-10 float-right">Create new Office</a>
+			<table class="table table-responsive">
 				<thead>
 					<tr class="bg-primary">
 						<th>Name</th>
@@ -43,10 +40,10 @@
 						<td>{{ $office -> latitude }}</td>
 						<td>{{ $office -> longitude }}</td>
 						<td style="width: 100px;">
-							<a href="{{ route('office.show', [$office -> id]) }}" class="btn btn-default btn-xs float-left">View</a>
+							<a href="{{ route('office.show', [$office -> id]) }}" class="btn btn-primary btn-xs btn-flat float-left m-b-2">View</a>
 							{{ Form::open(['route' => ['office.destroy', $office -> id], 'method' => 'DELETE']) }}
 
-							{{Form::submit('Delete', ['class' => 'btn btn-danger btn-xs float-left'])}}
+							{{Form::submit('Delete', ['class' => 'btn btn-danger btn-flat btn-xs float-left m-t-5'])}}
 
 							{{ Form::close() }}
 						</td>
@@ -55,6 +52,4 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
-</div>
 @endsection

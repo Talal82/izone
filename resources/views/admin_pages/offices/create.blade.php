@@ -2,9 +2,8 @@
 
 @section('title', 'Create Information')
 
-@section('breadcrumb-header', 'Offices')
+@section('page-title', 'Offices')
 
-@section('breadcrumb-detail', 'Create')
 
 @section('stylesheets')
 
@@ -13,8 +12,6 @@
 @endsection
 
 @section('content')
-<div class="box box-warning">
-	<div class="row">
 		<div class="col-md-6 offset-3">
 			{!! Form::open(['route' => 'office.store']) !!}
 				{{ csrf_field() }}
@@ -46,6 +43,4 @@
 			    {{ Form::submit('Create New Office', array('class' => 'btn btn-success btn-lg btn-block margin-vertical-10')) }}
 			{!! Form::close() !!}
 		</div>
-	</div>
-</div>
 @endsection

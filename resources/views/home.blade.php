@@ -2,13 +2,15 @@
 
 @section('title', 'Admin Dashboard')
 
-@section('breadcrumb-header', 'Dashboard')
+@section('page-title', 'Dashboard')
 
-@section('breadcrumb-detail', 'Control Panel')
 
 
 @section('content')
-<div class="container">
+<div class="row">
+    <div class="container">
+
+        <h1 class="align-middle" style="margin-top: 50%; color: grey;">Admin Dashboard</h1>
     {{-- <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="box">
@@ -26,6 +28,7 @@
             </div>
         </div>
     </div> --}}
+    </div>
 </div>
 @endsection
 

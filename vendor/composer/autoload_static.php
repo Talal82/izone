@@ -343,6 +343,13 @@ class ComposerStaticInit270d02e5f93bf4087284f365b99f628b
                 0 => __DIR__ . '/..' . '/mockery/mockery/library',
             ),
         ),
+        'K' => 
+        array (
+            'Kamaln7\\Toastr\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/oriceon/toastr-5-laravel/src',
+            ),
+        ),
         'J' => 
         array (
             'JakubOnderka\\PhpConsoleHighlighter' => 
@@ -378,6 +385,7 @@ class ComposerStaticInit270d02e5f93bf4087284f365b99f628b
         'App\\Helpers\\ConfirmBox' => __DIR__ . '/../..' . '/app/Helpers/ConfirmBox.php',
         'App\\Helpers\\MenuHelper' => __DIR__ . '/../..' . '/app/Helpers/MenuHelper.php',
         'App\\Http\\Controllers\\AboutController' => __DIR__ . '/../..' . '/app/Http/Controllers/AboutController.php',
+        'App\\Http\\Controllers\\AccountsController' => __DIR__ . '/../..' . '/app/Http/Controllers/AccountsController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -2277,6 +2285,9 @@ class ComposerStaticInit270d02e5f93bf4087284f365b99f628b
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'Kamaln7\\Toastr\\Facades\\Toastr' => __DIR__ . '/..' . '/oriceon/toastr-5-laravel/src/Kamaln7/Toastr/Facades/Toastr.php',
+        'Kamaln7\\Toastr\\Toastr' => __DIR__ . '/..' . '/oriceon/toastr-5-laravel/src/Kamaln7/Toastr/Toastr.php',
+        'Kamaln7\\Toastr\\ToastrServiceProvider' => __DIR__ . '/..' . '/oriceon/toastr-5-laravel/src/Kamaln7/Toastr/ToastrServiceProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',

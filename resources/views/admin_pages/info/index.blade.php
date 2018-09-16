@@ -2,9 +2,8 @@
 
 @section('title', 'Information Index')
 
-@section('breadcrumb-header', 'Information')
+@section('page-title', 'Site Information')
 
-@section('breadcrumb-detail', 'Index')
 
 @section('stylesheets')
 

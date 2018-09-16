@@ -7,11 +7,26 @@ use App\Project;
 use Storage;
 use Image;
 use Session;
+use Illuminate\Support\Facades\Input;
+
 
 class ProjectController extends Controller
 {
+    protected $breadCrumb;
+
+
     public function __construct(){
         $this -> middleware('auth');
+        $this -> breadCrumb = array(
+            array(
+                'link' => route('home'),
+                'text' => 'Dashboard'
+            ),
+            array(
+                'link' => route('project.index'),
+                'text' => 'Projects'
+            ),
+        );
     }
     /**
      * Display a listing of the resource.
@@ -20,8 +35,14 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        $crumb = array(
+            'link' => '',
+            'text' => 'Index'
+        );
+        array_push($this -> breadCrumb, $crumb);
         $projects = Project::all();
-        return view('admin_pages.projects.index') -> withProjects($projects);
+        // dd($projects)
+        return view('admin_pages.projects.index') -> withProjects($projects) -> withBreadCrumb($this -> breadCrumb);
     }
 
     /**
@@ -31,7 +52,12 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin_pages.projects.create');
+        $crumb = array(
+            'link' => '',
+            'text' => 'Create'
+        );
+        array_push($this -> breadCrumb, $crumb);
+        return view('admin_pages.projects.create') -> withBreadCrumb($this -> breadCrumb);
     }
 
     /**
@@ -102,8 +128,13 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
+        $crumb = array(
+            'link' => '',
+            'text' => 'Edit'
+        );
+        array_push($this -> breadCrumb, $crumb);
         $project = Project::find($id);
-        return view('admin_pages.projects.edit') -> withProject($project);
+        return view('admin_pages.projects.edit') -> withProject($project) -> withBreadCrumb($this -> breadCrumb);
     }
 
     /**
@@ -171,5 +202,36 @@ class ProjectController extends Controller
 
         Session::flash('success', 'Project Deleted Successfully!');
         return redirect() -> route('project.index');
+    }
+
+    public function changeVisibility($id){
+        // echo "ho gya";
+        $project = Project::find($id);
+
+        if($project -> featured){
+            $project -> featured = false;
+        }else{
+            $project -> featured = true;
+        }
+
+        $project -> save();
+        return redirect() -> back();
+    }
+
+    public function bulkAction(Request $request){
+        // $ids = Input::get('ids');
+        if($request -> ajax()){
+            // $data = json_decode($request -> all());
+            // $data = $request -> all();
+            $data = $request -> input('ids');
+            // $data = Input::get('ids');
+            // $data = $_POST['ids'];
+            dd($data);
+            // echo $data;
+            echo "success";
+        }
+
+        
+        // return response() -> json("success");
     }
 }

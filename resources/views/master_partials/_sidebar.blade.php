@@ -40,23 +40,23 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> CMS</span> <span class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-texture"></i> <span> CMS</span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('about.index') }}">About</a></li>
                         <li class="{{ Route::currentRouteName() =='office.create' ? 'active' : '' }}"><a href="{{ route('office.index') }}">offices</a></li>
                         <li><a href="{{ route('service.index') }}">Services</a></li>
                         <li><a href="{{ route('project.index') }}">Projects</a></li>
-                        <li><a href="{{ route('banner.index') }}">banners</a></li>
-                        <li><a href="{{ route('benefit.index') }}">benefits</a></li>
-                        <li><a href="{{ route('certificate.index') }}">certificates</a></li>
-                        <li><a href="{{ route('gallery.index') }}">gallerys</a></li>
+                        <li><a href="{{ route('banner.index') }}">Banners</a></li>
+                        <li><a href="{{ route('benefit.index') }}">Benefits</a></li>
+                        <li><a href="{{ route('certificate.index') }}">Certificates</a></li>
+                        <li><a href="{{ route('gallery.index') }}">Gallerys</a></li>
                         <li><a href="{{ route('info.index') }}">General Info</a></li>
-                        <li><a href="{{ route('value.index') }}">values</a></li>
+                        <li><a href="{{ route('value.index') }}">Values</a></li>
                     </ul>
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Settings</span> <span class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-settings"></i> <span> Settings</span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('settings.index') }}">General Site Settings</a></li>
                         <li><a href="{{ route('account.index') }}">Account Settings</a></li>

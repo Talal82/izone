@@ -15,6 +15,8 @@
             {{-- left sidebar section --}}
             @include('master_partials._sidebar')
 
+            {!! Toastr::render() !!}
+
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
@@ -22,11 +24,10 @@
                 <!-- Start content -->
                 <div class="content">
                     <div class="container-fluid">
-                        <div class="row">
 
+                            @include('partials._messages')
                             @yield('content')
 
-                        </div>
                         <!-- end row -->
                     </div> <!-- container -->
                 </div> <!-- content -->

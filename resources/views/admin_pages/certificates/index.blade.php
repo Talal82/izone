@@ -2,9 +2,8 @@
 
 @section('title', 'Certificate Images')
 
-@section('breadcrumb-header', 'Certificates')
+@section('page-title', 'Certificates')
 
-@section('breadcrumb-detail', 'Add/Delete')
 
 @section('stylesheets')
 
@@ -13,42 +12,39 @@
 @endsection
 
 @section('content')
-<div class="box box-warning">
-	<div class="row">
-		<div class="col-md-6 offset-2">
-			{!! Form::open(['route' => 'certificate.store', 'method' => 'POST', 'files' => true]) !!}
-			{{ csrf_field() }}
+<div class="col-md-6 offset-2">
+	{!! Form::open(['route' => 'certificate.store', 'method' => 'POST', 'files' => true]) !!}
+	{{ csrf_field() }}
 
-			{{ Form::label('image', "Upload Certificate Image:", ['class' => 'margin-vertical-10']) }}
-			{{ Form::file('image') }}
+	{{ Form::label('image', "Upload Certificate Image:", ['class' => 'margin-vertical-10']) }}
+	{{ Form::file('image', ['class' => 'form-control-file']) }}
 
-			{{ Form::submit('Add New Image', array('class' => 'btn btn-success btn-lg btn-block margin-vertical-10')) }}
-			{!! Form::close() !!}
-		</div>
-	</div>
+	{{ Form::submit('Add New Certificate', array('class' => 'btn btn-success btn-lg btn-block margin-vertical-10')) }}
+	{!! Form::close() !!}
 </div>
 <br><br>
-<div class="box box-warning">
-	@foreach($certificates as $certificate)
-	<div class="row"">
-		<div class="col-md-8 margin-all"">
-			<img class="float-left" src="{{ asset('images/'.$certificate -> image) }}" height="100" width="100">
+<div class="col-md-12">
+
+	<div class="row card p-2">
+		<div class="card-title text-center">
+			<h3>All Certificates</h3>
 		</div>
-		<div class="col-md-2 float-right margin-all text-center">
+	@foreach($certificates as $certificate)
+		<div class="col-md-8 margin-all offset-2">
+			<img class="float-left" src="{{ asset('images/'.$certificate -> image) }}" height="100" width="100">
 			{{ Form::open(['route' => ['certificate.destroy', $certificate -> id], 'method' => 'DELETE']) }}
 
-			{{Form::submit('Delete', ['class' => 'btn btn-danger btn-block'])}}
+			{{Form::submit('Delete', ['class' => 'btn btn-danger float-right'])}}
 
 			{{ Form::close() }}
 		</div>
-	</div>
 	@endforeach
-	<div class="row">
-		<div class="col-md-12 text-center">
-			{{ $certificates -> links() }}
-		</div>
 	</div>
-	
+</div>
+<div class="col-md-12 m-t-5">
+	<div class="text-center float-right">
+		{{ $certificates -> links() }}
+	</div>
 </div>
 
 @endsection

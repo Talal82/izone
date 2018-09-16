@@ -4,10 +4,7 @@
 
 @section('content')
 
-<div class="text-center">
-    <a href="{{ route('index') }}" class="logo"><span>Izone<span>Mechanics</span></span></a>
-    <h5 class="text-muted m-t-0 font-600">Admin Sign In Page</h5>
-</div>
+
 <div class="m-t-40 card-box">
     <div class="text-center">
         <h4 class="text-uppercase font-bold m-b-0">Sign In</h4>
@@ -65,11 +62,5 @@
     </div>
 </div>
 <!-- end card-box-->
-
-<div class="row">
-    <div class="col-sm-12 text-center">
-        <p class="text-muted">Don't have an account? <a href="{{ route('register') }}" class="text-primary m-l-5"><b>Sign Up</b></a></p>
-    </div>
-</div>
 
 @endsection

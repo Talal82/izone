@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/****************************************************************
+ Designed & Developed By "Ehtisham Elahi"
+ ***************************************************************/
+.panels{
+	margin: 10px 0 0 10px;
+}
+.panels > .tabs{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.panels > .tabs > li{
+	display: inline;
+	background-color: #fff;
+	color: #000;
+	cursor: pointer;
+	padding: 5px 10px;
+	border-radius: 5px 5px 0 0;
+}
+.panels > .tabs > li:hover{
+	background-color: #1E90FF;
+	color: #fff;
+}
+.panels > div{
+	background-color: #fff;
+	padding: 10px 10px;
+	display: none;
+}
+.panels > .panelactive{
+	display: block;
+}
+.panels  .active{
+	background-color: #1E90FF !important;
+	color: #fff !important;
+}

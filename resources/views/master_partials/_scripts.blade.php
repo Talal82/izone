@@ -17,11 +17,11 @@
 <script src="{{ asset('assets/plugins/jquery-knob/jquery.knob.js') }}"></script>
 
 <!--Morris Chart-->
-<script src="{{ asset('assets/plugins/morris/morris.min.js') }}"></script>
+{{-- <script src="{{ asset('assets/plugins/morris/morris.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/raphael/raphael-min.js') }}"></script>
-
+ --}}
 <!-- Dashboard init -->
-<script src="{{ asset('assets/pages/jquery.dashboard.js') }}"></script>
+{{-- <script src="{{ asset('assets/pages/jquery.dashboard.js') }}"></script> --}}
 
 <!-- App js -->
 <script src="{{ asset('assets/js/jquery.core.js') }}"></script>

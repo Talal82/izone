@@ -2,9 +2,8 @@
 
 @section('title', 'Edit Office Info')
 
-@section('breadcrumb-header', 'Offices')
+@section('page-title', 'Offices')
 
-@section('breadcrumb-detail', 'Edit')
 
 @section('stylesheets')
 
@@ -13,7 +12,6 @@
 @endsection
 
 @section('content')
-		<div class="row">
 			<div class="col-md-12">
 				{!! Form::model( $office , ['route' => ['office.update', $office->id],  'method' => 'PUT' ]) !!}
 				<div class="row">
@@ -45,7 +43,7 @@
 						{{ Form::text('longitude', null, ['class' => 'form-control']) }}
 					</div>
 					<div class="col-md-4">
-						<div class="well">
+						<div class="card p-2">
 							<dl class="dl-horizontal">
 								<dt>Created At:</dt>
 								<dd> {{ date('M j,Y h:i a' , strtotime($office -> created_at)) }} </dd>
@@ -69,6 +67,5 @@
 				</div>
 				{!! Form::close() !!}
 			</div>
-		</div>
 
 @endsection

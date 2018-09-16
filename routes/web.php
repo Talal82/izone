@@ -34,7 +34,10 @@ Route::get('home', 'HomeController@index')->name('home');
 
 
 //admin routes
-Route::prefix('admin/') -> group(function(){	Route::resource('info', 'InfoController', ['except' => ['show']]);
+Route::prefix('admin/') -> group(function(){	
+
+
+	Route::resource('info', 'InfoController', ['except' => ['show']]);
 	Route::resource('office', 'OfficeController');
 	Route::resource('banner', 'BannerController', ['except' => ['create']]);
 	Route::resource('value' , 'ValueController', ['except' => ['create','show']]);
@@ -48,8 +51,11 @@ Route::prefix('admin/') -> group(function(){	Route::resource('info', 'InfoContro
 	Route::put('general/settings/header/{id}', 'GeneralSettingsController@updateHeaderInfo') -> name('headerinfo.update');
 	Route::put('general/settings/footer/{id}', 'GeneralSettingsController@updateFooterInfo') -> name('footerinfo.update');
 	Route::put('general/settings/social-links', 'GeneralSettingsController@updateSocialLinks') -> name('sociallinks.update');
-	Route::get('settings/accounts', 'GeneralSettingsController@getAccountSettings') -> name('account.index');
-	Route::put('settings/accounts/{id}', 'GeneralSettingsController@updateAccountSettings') -> name('account.update');
+	Route::get('settings/accounts', 'AccountsController@getAccountSettings') -> name('account.index');
+	Route::put('settings/accounts/{id}', 'AccountsController@updateAccountSettings') -> name('account.update');
+	Route::post('projects/bulk-action', 'ProjectController@bulkAction') -> name('delete.bulk.projects');
+	Route::get('project/change-visibility/{id}', 'ProjectController@changeVisibility') -> name('project.visibility');
+	
 });
 
 

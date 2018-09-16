@@ -11,50 +11,32 @@ Top Bar Start -->
         <div class="container-fluid">
 
             <!-- Page title -->
-            <ul class="nav navbar-nav list-inline navbar-left">
+            <ul class="nav navbar-nav list-inline navbar-left" style="width: 100%;">
                 <li class="list-inline-item">
                     <button class="button-menu-mobile open-left">
                         <i class="mdi mdi-menu"></i>
                     </button>
                 </li>
-                <li class="list-inline-item">
-                    <h4 class="page-title">Dashboard</h4>
+                <li class="list-inline-item"">
+                    <h4 class="page-title" style="display: inline;">@yield('page-title')</h4>
+
+
+                    <ol class="breadcrumb pull-right m-t-15">
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('project.index') }}">Projects</a></li>
+                        <li class="breadcrumb-item active">Index</li>
+                        
+                        {{-- @foreach($breadCrumb as $crumb)
+                            @if( $crumb['link'] != '')
+                                <li class="breadcrumb-item"><a href="{{ $crumb['link'] }}">{{ $crumb['text'] }}</a></li>
+                            @else
+                                <li class="breadcrumb-item active">{{ $crumb['text'] }}</li>
+                            @endif
+                        @endforeach --}}
+                    </ol>
+
                 </li>
             </ul>
-
-            {{-- <nav class="navbar-custom">
-
-                <ul class="list-unstyled topbar-right-menu float-right mb-0">
-
-                    <li>
-                        <!-- Notification -->
-                        <div class="notification-box">
-                            <ul class="list-inline mb-0">
-                                <li>
-                                    <a href="javascript:void(0);" class="right-bar-toggle">
-                                        <i class="mdi mdi-bell-outline noti-icon"></i>
-                                    </a>
-                                    <div class="noti-dot">
-                                        <span class="dot"></span>
-                                        <span class="pulse"></span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- End Notification bar -->
-                    </li>
-
-                    <li class="hide-phone">
-                        <form class="app-search">
-                            <input type="text" placeholder="Search..."
-                            class="form-control">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </li>
-
-                </ul>
-            </nav> --}}
         </div><!-- end container -->
     </div><!-- end navbar -->
-</div>
-            <!-- Top Bar End
+</div><!-- Top Bar End

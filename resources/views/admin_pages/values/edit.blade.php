@@ -2,24 +2,16 @@
 
 @section('title', 'Edit Values')
 
-@section('breadcrumb-header', 'Values')
+@section('page-title', 'Values')
 
-@section('breadcrumb-detail', 'Edit')
 
 @section('stylesheets')
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">
-	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-  	<script>
-  		tinymce.init({ 
-  			selector:'textarea'
-  		});
-  	</script>
 
 @endsection
 
 @section('content')
-		<div class="row">
 			<div class="col-md-12">
 				{!! Form::model( $value , ['route' => ['value.update', $value->id], 'method' => 'PUT']) !!}
 				<div class="row">
@@ -34,7 +26,7 @@
 
 					</div>
 					<div class="col-md-4">
-						<div class="well">
+						<div class="card p-2">
 							<dl class="dl-horizontal">
 								<dt>Created At:</dt>
 								<dd> {{ date('M j,Y h:i a' , strtotime($value -> created_at)) }} </dd>
@@ -57,6 +49,34 @@
 				</div>
 				{!! Form::close() !!}
 			</div>
-		</div>
+
+@endsection
+
+@section('scripts')
+
+<script src="{{ asset('assets/plugins/tinymce/tinymce.min.js') }}"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		tinymce.init({
+			selector: "textarea",
+			theme: "modern",
+			plugins: [
+			"advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+			"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+			"save table contextmenu directionality emoticons template paste textcolor"
+			],
+			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+			style_formats: [
+			{title: 'Bold text', inline: 'b'},
+			{title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+			{title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+			{title: 'Example 1', inline: 'span', classes: 'example1'},
+			{title: 'Example 2', inline: 'span', classes: 'example2'},
+			{title: 'Table styles'},
+			{title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+			]
+		});
+	});
+</script>
 
 @endsection

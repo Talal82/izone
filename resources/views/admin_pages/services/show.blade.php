@@ -2,9 +2,8 @@
 
 @section('title', 'View Service')
 
-@section('breadcrumb-header', 'Services')
+@section('page-title', 'Services')
 
-@section('breadcrumb-detail', 'View Service')
 
 @section('stylesheets')
 

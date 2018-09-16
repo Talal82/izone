@@ -2,9 +2,8 @@
 
 @section('title', 'View Project')
 
-@section('breadcrumb-header', 'Projects')
+@section('page-title', 'Projects')
 
-@section('breadcrumb-detail', 'View Project')
 
 @section('stylesheets')
 
@@ -14,29 +13,27 @@
 
 
 @section('content')
-<div class="box box-warning">
-	<div class="row">
-		<div class="col-md-12">
+<div class="row">
 			<div class="col-md-8 margin-vertical-10">
 					<img src="{{ asset('images/'. $project -> main_image) }}" width="400" height="300">
 					<h2>{{ $project -> title }}</h2>
 					<div>
 						<h4>Name:</h4>
-						<p class="well">{{ $project -> name }}</p>
+						<p class="form-control">{{ $project -> name }}</p>
 						<h4>Owner:</h4>
-						<p class="well">{{ $project -> owner }}</p>
+						<p class="form-control">{{ $project -> owner }}</p>
 						<h4>Consultant:</h4>
-						<p class="well">{{ $project -> consultant }}</p>
+						<p class="form-control">{{ $project -> consultant }}</p>
 						<h4>Status:</h4>
-						<p class="well">{{ $project -> status }}</p>
+						<p class="form-control">{{ $project -> status }}</p>
 						<h4>Detail:</h4>
-						<div class="well">
+						<div class="form-control">
 							{!! $project -> detail !!}
 						</div>
 					</div>
 			</div>
 			<div class="col-md-4 margin-vertical-10">
-				<div class="well">
+				<div class="card p-2">
 					<dl class="dl-horizontal">
 						<dt>Created At:</dt>
 						<dd> {{ date('M j,Y h:i a' , strtotime($project -> created_at)) }} </dd>
@@ -60,8 +57,5 @@
 					</div>
 				</div>
 			</div>
-
-		</div>
-	</div>
 </div>
 @endsection

@@ -2,9 +2,8 @@
 
 @section('title', 'View Office')
 
-@section('breadcrumb-header', 'Offices')
+@section('page-title', 'Offices')
 
-@section('breadcrumb-detail', 'View')
 
 @section('stylesheets')
 
@@ -14,9 +13,6 @@
 
 
 @section('content')
-<div class="box box-warning">
-	<div class="row">
-		<div class="col-md-12">
 			<div class="col-md-8">
 				<h2>{{ $office -> name }}</h2>
 				<p><strong>Email:</strong> {{ $office -> email }}</p>
@@ -29,7 +25,7 @@
 
 			</div>
 			<div class="col-md-4 margin-vertical-10">
-				<div class="well">
+				<div class="card p-2">
 					<dl class="dl-horizontal">
 						<dt>Created At:</dt>
 						<dd> {{ date('M j,Y h:i a' , strtotime($office -> created_at)) }} </dd>
@@ -53,8 +49,4 @@
 					</div>
 				</div>
 			</div>
-
-		</div>
-	</div>
-</div>
 @endsection

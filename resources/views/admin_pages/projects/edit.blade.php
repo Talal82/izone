@@ -2,87 +2,167 @@
 
 @section('title', 'Edit Project Info')
 
-@section('breadcrumb-header', 'Projects')
+@section('page-title', 'Projects')
 
-@section('breadcrumb-detail', 'Edit')
 
 @section('stylesheets')
+<style>
+
+@font-face {
+	font-family: DeliciousRoman;
+	src: {{ asset('assets/plugins/dropify/fonts/*') }};
+}
+
+</style>
+{{-- custom style for tabs --}}
+<link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.master.css') }}">
+{{-- dropify js link --}}
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/dropify/css/dropify.min.css') }}">
 
 @endsection
 
 @section('content')
-		<div class="row">
-			<div class="col-md-12">
-				{!! Form::model( $project , ['route' => ['project.update', $project->id],  'method' => 'PUT', 'files' => true ]) !!}
-				<div class="row">
-					<div class="col-md-8">
-						{{ csrf_field() }}
-						
+
+{!! Form::model( $project , ['route' => ['project.update', $project->id],  'method' => 'PUT', 'files' => true ]) !!}
+
+<div class="card">
+	<div class="card-header">
+		<h4 style="display: inline; margin-top: 5px;">Edit Project</h4>
+		{{ Form::submit('Submit', array('class' => 'btn btn-success pull-right')) }}
+	</div>
+	<div class="panels">
+		<ul class="tabs">
+			<li class="active" panel-tab="info">Info</li>
+			<li panel-tab="image">Image</li>
+		</ul>
+		<div id="info" class="panelactive">
+			<h4>Project Info</h4>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
 						{{ Form::label('title', 'Title:', ['class' => 'margin-top-10'])}}
 						{{ Form::text('title', null, array('class' => 'form-control'))}}
-
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
 						{{ Form::label('name', 'Name:', ['class' => 'margin-top-10'])}}
 						{{ Form::text('name', null, array('class' => 'form-control'))}}
+					</div>
+				</div>
 
+				<div class="col-md-6">
+					<div class="form-group">
 						{{ Form::label('owner', 'Owner:', ['class' => 'margin-top-10'])}}
 						{{ Form::text('owner', null, array('class' => 'form-control'))}}
+					</div>
+				</div>
 
+				<div class="col-md-6">
+					<div class="form-group">
 						{{ Form::label('consultant', 'Consultant:', ['class' => 'margin-top-10'])}}
 						{{ Form::text('consultant', null, array('class' => 'form-control'))}}
-
-						{{ Form::label('status', 'Status:', ['class' => 'margin-top-10'])}}
-						@if( $project -> status == 'Ongoing')
-							<select class="form-control form-control-lg" name="status" value="Ongoing">
-						@else
-							<select class="form-control form-control-lg" name="status" value="Completed">
-						@endif
-							<option value="Ongoing">Ongoing</option>
-							<option value="Completed">Completed</option>
-						</select>
-						<br>
-						
-						@if($project -> featured == true)
-							<input type="checkbox" checked name="featured" class="form-check-input">
-						@else
-							<input type="checkbox" name="featured" class="form-check-input">
-						@endif
-						{{ Form::label('featured', 'Featured:',['class', ''])}}<br>
-
-
-						{{ Form::label('main_image', 'Upload Main Project Image:', ['class' => 'margin-top-10']) }}
-						{{ Form::file('main_image', ['class' => 'btn btn-default btn-flat']) }}
-
-						{{ Form::label('detail', "Detail:", ['class' => 'margin-top-10']) }}
-						{{ Form::textarea('detail', null, ['class' => 'form-control']) }}
-						
 					</div>
-					<div class="col-md-4">
-						<div class="well">
-							<dl class="dl-horizontal">
-								<dt>Created At:</dt>
-								<dd> {{ date('M j,Y h:i a' , strtotime($project -> created_at)) }} </dd>
-							</dl>
-							<dl class="dl-horizontal">
-								<dt>Last Updated:</dt>
-								<dd> {{ date('M j,Y h:i a', strtotime($project -> created_at)) }} </dd>
-							</dl>
-							<hr>
-							<div class="row">
-								<div class="col-sm-6">
-									<a href="{{ route('project.show', [$project -> id]) }}" class="btn btn-danger btn-block">Cancel</a>
-									{{-- {!! Html::linkRoute('office.view', 'Cancel', array($office -> id), array('class' => 'btn btn-danger btn-block')) !!} --}}
-								</div>
-								<div class="col-sm-6">
-									{{ Form::submit('Save Changes', ['class' => 'btn btn-success btn-block']) }}
+				</div>
+				
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								{{ Form::label('status', 'Status:', ['class' => 'margin-top-10'])}}
+								<select class="form-control form-control" name="status">
+									<option value="Ongoing">Ongoing</option>
+									<option value="Completed">Completed</option>
+								</select>
+							</div>
+						</div>
+
+
+						<div class="col-md-6">
+							<div class="form-group" style="padding-top: 40px">
+								<div class="form-check">
+									<input type="checkbox" name="featured" class="form-check-input">
+									{{ Form::label('featured', 'Featured:',['class', ''])}}<br>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				{!! Form::close() !!}
+
+
+
+				<div class="col-md-12">
+					<div class="form-group">
+						{{ Form::label('detail', "Detail:", ['class' => 'margin-top-10']) }}
+						{{ Form::textarea('detail', null, ['class' => 'form-control']) }}
+					</div>
+				</div>
+
+
 			</div>
 		</div>
+		<div id="image">
+			<h4>Project Image</h4>
+			<input type="file" data-default-file="{{ asset('images/'.$project -> main_image) }}" name="main_image" class="dropify form-control-file" data-height="400" data-width="400">
+			{{-- {{ Form::file('main_image', ['class' => 'dropify btn btn-default btn-flat form-control-file']) }} --}}
+		</div>
+	</div>
+	
+	
+</div>
+{!! Form::close() !!}
+@endsection
+
+@section('scripts')
+{{-- tinymce plugin --}}
+<script src="{{ asset('assets/plugins/tinymce/tinymce.min.js') }}"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		tinymce.init({
+			selector: "textarea",
+			theme: "modern",
+			height:300,
+			plugins: [
+			"advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+			"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+			"save table contextmenu directionality emoticons template paste textcolor"
+			],
+			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+			style_formats: [
+			{title: 'Bold text', inline: 'b'},
+			{title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+			{title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+			{title: 'Example 1', inline: 'span', classes: 'example1'},
+			{title: 'Example 2', inline: 'span', classes: 'example2'},
+			{title: 'Table styles'},
+			{title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+			]
+		});
+	});
+</script>
+
+{{-- custom script for dynamically active tabs --}}
+<script>
+	$(document).ready(function(){
+		$('.panels .tabs li').on('click',function(){
+			var $panel = $(this).closest('.panels');
+			$panel.find('.active').removeClass('active');
+			$(this).addClass('active');
+			var panelToShow = $(this).attr('panel-tab');
+			
+			$panel.find('.panelactive').slideUp(300,function(){
+				$(this).removeClass('panelactive');
+				$('#'+panelToShow).slideDown(300).addClass('panelactive');
+			});
+		});
+	});
+</script>
+<script type="text/javascript" src="{{ asset('assets/plugins/dropify/js/dropify.min.js') }}"></script>
+
+<script type="text/javascript">
+	$('.dropify').dropify();
+</script>
 
 @endsection

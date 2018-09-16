@@ -7,13 +7,15 @@
 
 <title>Admin - @yield('title')</title>
 
-<!--Morris Chart CSS -->
-<link rel="stylesheet" href="{{ asset('assets/plugins/morris/morris.css') }}">
-
 <!-- App css -->
 <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
+
+{{-- Toastr CDN --}}
+<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 {{-- custom stylesheets if needed --}}
 @yield('stylesheets')

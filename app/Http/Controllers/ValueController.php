@@ -54,9 +54,10 @@ class ValueController extends Controller
 
         $value -> save();
 
-         Toastr::success('Messages in here', 'Title', ["positionClass" => "toast-top-center"]);
-
-        Session::flash('success', 'Value Saved Successfully!');
+        Toastr::success('Value Saved successfully!', 'Success',[
+            'closeButton' => true,
+            'closeEasing' => 'swing',
+        ]);
         return redirect() -> route('value.index');
 
     }
