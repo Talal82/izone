@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Benefit;
+use Toastr;
 use Session;
 
 class BenefitController extends Controller
@@ -52,7 +53,8 @@ class BenefitController extends Controller
 
         $benefit -> save();
 
-        Session::flash('success', 'Benefit Saved Successfully!');
+        // Session::flash('success', 'Benefit Saved Successfully!');
+        Toastr::success('Benefit Saved Successfully!', 'Success');
         return redirect() -> route('benefit.index');
     }
 
@@ -100,7 +102,8 @@ class BenefitController extends Controller
 
         $benefit -> save();
 
-        Session::flash('success', 'Benefits Updated Successfully!');
+        // Session::flash('success', 'Benefits Updated Successfully!');
+        Toastr::success('Benefit Updated Successfully!', 'Success');
         return redirect() -> route('benefit.index');
     }
 
@@ -115,7 +118,8 @@ class BenefitController extends Controller
         $benefit = Benefit::find($id);
         $benefit -> delete();
 
-        Session::flash('success', 'Benefit Deleted Successfully!');
+        // Session::flash('success', 'Benefit Deleted Successfully!');
+        Toastr::error('Benefit Deleted Successfully!', 'Success');
         return redirect() -> route('benefit.index');
     }
 }

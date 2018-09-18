@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Office;
+use Toastr;
 use Session;
 
 class OfficeController extends Controller
@@ -64,7 +65,8 @@ class OfficeController extends Controller
 
         $office -> save();
 
-        Session::flash('success', 'Office Created Successfully');
+        // Session::flash('success', 'Office Created Successfully');
+        Toastr::success('Office Created Successfully!', 'Success');
 
         return redirect() -> route('office.index');
     }
@@ -126,7 +128,9 @@ class OfficeController extends Controller
 
         $office -> save();
 
-        Session::flash('success', 'Office Edited Successfully');
+        // Session::flash('success', 'Office Edited Successfully');
+        Toastr::success('Office Edited Successfully!', 'Success');
+
 
         return redirect() -> route('office.show', [$office -> id]);
     }
@@ -142,8 +146,8 @@ class OfficeController extends Controller
         $office = Office::find($id);
         $office -> delete();
 
-        Session::flash('success', 'Office Deleted Successfully!');
-
+        // Session::flash('success', 'Office Deleted Successfully!');
+        Toastr::error('Office Deleted Successfully!', 'Success');
         return redirect() -> route('office.index');
     }
 }

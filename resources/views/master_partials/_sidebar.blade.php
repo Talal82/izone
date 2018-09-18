@@ -54,6 +54,9 @@
                         <li><a href="{{ route('value.index') }}">Values</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{ route('users.index') }}" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> User Management</span> </a>
+                </li>
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-settings"></i> <span> Settings</span> <span class="menu-arrow"></span></a>

@@ -24,7 +24,7 @@
 @section('content')
 <div class="card p-2">
 	<div class="card-header">
-		<h4 style="display: inline; margin-top: 5px;">All Project</h4>
+		<h4 style="display: inline;">All Project</h4>
 		<a href="{{ route('project.create') }}" class="btn btn-primary pull-right m-0"><span class="fa fa-plus m-0"></span> Create</a>
 	</div>
 	<div class="card-body">

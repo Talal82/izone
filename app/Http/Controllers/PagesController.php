@@ -13,6 +13,7 @@ use App\Project;
 use App\About;
 use App\Introduction;
 use App\Value;
+use Toastr;
 use Session;
 use Mail;
 
@@ -97,7 +98,8 @@ class PagesController extends Controller
             $message -> to('talalanwer2424@gmail.com');
             $message -> subject($data['subject']);
         });
-        Session::flash('success','Mail Sent Successfully!');
+        // Session::flash('success','Mail Sent Successfully!');
+        Toastr::success('Your Email has been Sent!', 'Success');
         return redirect()->route('contact');
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Service;
 use Image;
 use Storage;
+use Toastr;
 use Session;
 
 class ServiceController extends Controller
@@ -80,7 +81,8 @@ class ServiceController extends Controller
 
         $service -> save();
 
-        Session::flash('success', 'Service Created Successfully!');
+        // Session::flash('success', 'Service Created Successfully!');
+        Toastr::success('Service Created Successfully!', 'Success');
         return redirect() -> route('service.index');
 
 
@@ -163,7 +165,8 @@ class ServiceController extends Controller
 
         $service -> save();
 
-        Session::flash('success', 'Service Updated Successfully!');
+        // Session::flash('success', 'Service Updated Successfully!');
+        Toastr::success('Service Updated Successfully!', 'Success');
         return redirect() -> route('service.index');
 
     }
@@ -183,7 +186,8 @@ class ServiceController extends Controller
         Storage::delete($service -> visible_icon);
 
         $service -> delete();
-        Session::flash('success','Service Deleted Successfully!');
+        // Session::flash('success','Service Deleted Successfully!');
+        Toastr::error('Service Deleted Successfully!', 'Success');
         return redirect() -> route('service.index');
     }
 }

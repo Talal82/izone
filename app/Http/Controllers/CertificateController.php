@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Certificate;
 use Session;
 use Image;
+use Toastr;
 use Storage;
 
 class CertificateController extends Controller
@@ -58,7 +59,8 @@ class CertificateController extends Controller
 
         $certificate -> save();
 
-        Session::flash('success','Image Uploaded Successfully!');
+        // Session::flash('success','Image Uploaded Successfully!');
+        Toastr::success('Image Uploaded Successfully!', 'Success');
         return redirect() -> route('certificate.index');
     }
 
@@ -108,7 +110,8 @@ class CertificateController extends Controller
         Storage::delete($image -> image);
         $image -> delete();
 
-        Session::flash('success','Image Deleted Successfully!');
+        // Session::flash('success','Image Deleted Successfully!');
+        Toastr::error('Image Deleted Successfully!', 'Success');
         return redirect() -> route('certificate.index');
     }
 }

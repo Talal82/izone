@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Info;
 use App\SocialIcon;
 use Session;
+use Toastr;
 use Hash;
 use Auth;
 use App\User;
@@ -44,7 +45,8 @@ class GeneralSettingsController extends Controller
 
         $info -> save();
 
-        Session::flash('success', 'Information Updated Successfully!');
+        // Session::flash('success', 'Information Updated Successfully!');
+        Toastr::success('Informatin Updated Successfully!', 'Success');
 
         return redirect() -> route('settings.index');
     }
@@ -66,7 +68,8 @@ class GeneralSettingsController extends Controller
 
         $info -> save();
 
-        Session::flash('success', 'Information Updated Successfully!');
+        // Session::flash('success', 'Information Updated Successfully!');
+        Toastr::success('Information Updated Successfully!', 'Success');
 
         return redirect() -> route('settings.index');
     }

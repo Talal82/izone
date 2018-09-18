@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Info;
 use Session;
+use Toastr;
 
 class InfoController extends Controller
 {
@@ -58,7 +59,8 @@ class InfoController extends Controller
 
         $info -> save();
 
-        Session::flash('success', 'Information Created Successfully!');
+        // Session::flash('success', 'Information Created Successfully!');
+        Toastr::success('Information Created Successfully!', 'Success');
 
         return redirect() -> route('info.index');
     }
@@ -112,7 +114,8 @@ class InfoController extends Controller
 
         $info -> save();
 
-        Session::flash('success', 'Information Updated Successfully!');
+        // Session::flash('success', 'Information Updated Successfully!');
+        Toastr::success('Information Updated Successfully!', 'Success');
 
         return redirect() -> route('info.index');
 
@@ -129,7 +132,8 @@ class InfoController extends Controller
         $info = Info::find($id);
         $info -> delete();
 
-        Session::flash('success', 'Information Deleted Successfully!');
+        // Session::flash('success', 'Information Deleted Successfully!');
+        Toastr::error('Information Deleted Successfully!', 'Success');
         return redirect() -> route('info.index');
     }
 }

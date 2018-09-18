@@ -7,6 +7,7 @@ use App\About;
 use Session;
 use Storage;
 use Image;
+use Toastr;
 
 class AboutController extends Controller
 {
@@ -142,7 +143,8 @@ class AboutController extends Controller
         // }
 
         $about -> save();
-        Session::flash('success', 'About Us Information Updated Successfully!');
+        // Session::flash('success', 'About Us Information Updated Successfully!');
+        Toastr::success('Information Updated Successfully!', 'Success');
         return redirect() -> route('about.index');
     }
 

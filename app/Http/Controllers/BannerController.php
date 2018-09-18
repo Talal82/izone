@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Banner;
 use Session;
 use Image;
+use Toastr;
 use Storage;
 
 class BannerController extends Controller
@@ -67,7 +68,8 @@ class BannerController extends Controller
 
         $banner -> save();
 
-        Session::flash('success', 'New Banner Added Successfully!');
+        // Session::flash('success', 'New Banner Added Successfully!');
+        Toastr::success('Banner Added Successfully!', 'Success');
         return redirect() -> route('banner.index');
     }
 
@@ -137,7 +139,8 @@ class BannerController extends Controller
 
         $banner -> save();
 
-        Session::flash('success', 'Banner Updated Successfully!');
+        // Session::flash('success', 'Banner Updated Successfully!');
+        Toastr::success('Banner Updated Successfully!', 'Success');
         return redirect() -> route('banner.show', [$banner -> id]);
     }
 
@@ -153,7 +156,8 @@ class BannerController extends Controller
         Storage::delete($banner -> image);
         $banner -> delete();
 
-        Session::flash('success', 'Banner Deleted Successfully!');
+        // Session::flash('success', 'Banner Deleted Successfully!');
+        Toastr::error('Banner Deleted Successfully!', 'Success');
         return redirect() -> route('banner.index');
     }
 }

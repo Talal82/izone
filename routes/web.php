@@ -28,16 +28,16 @@ Route::post('contact', 'PagesController@postContact') -> name('contact.post');
 
 //authentication routes
 Auth::routes();
-Route::get('home', 'HomeController@index')->name('home');
-
-
-
+// Route::middleware('role:superadministrator|administrator|editor|author|contributor') -> group(function(){
+	Route::get('home', 'HomeController@index')->name('home');
+// });
 
 //admin routes
-Route::prefix('admin/') -> group(function(){	
+Route::prefix('admin/') -> middleware('role:superadministrator|administrator|editor|author|contributor') -> group(function(){
 
-
+	Route::get('/', 'HomeController@index') -> name('home');
 	Route::resource('info', 'InfoController', ['except' => ['show']]);
+	Route::resource('users', 'UserController');
 	Route::resource('office', 'OfficeController');
 	Route::resource('banner', 'BannerController', ['except' => ['create']]);
 	Route::resource('value' , 'ValueController', ['except' => ['create','show']]);

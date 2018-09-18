@@ -8,6 +8,7 @@ use Storage;
 use Image;
 use Session;
 use Illuminate\Support\Facades\Input;
+use Toastr;
 
 
 class ProjectController extends Controller
@@ -103,7 +104,8 @@ class ProjectController extends Controller
 
         $project -> save();
 
-        Session::flash('success', 'Project Created Successfully!');
+        // Session::flash('success', 'Project Created Successfully!');
+        Toastr::success('Project Created Successfully!', 'Success');
         return redirect() -> route('project.index');
 
     }
@@ -184,7 +186,8 @@ class ProjectController extends Controller
         
         $project -> save();
 
-        Session::flash('success', 'Project Updated Successfully!');
+        // Session::flash('success', 'Project Updated Successfully!');
+        Toastr::success('Project has been Updated!', 'Success');
         return redirect() -> route('project.index');
     }
 
@@ -200,7 +203,8 @@ class ProjectController extends Controller
         Storage::delete($project -> main_image);
         $project -> delete();
 
-        Session::flash('success', 'Project Deleted Successfully!');
+        // Session::flash('success', 'Project Deleted Successfully!');
+        Toastr::success('Office Deleted Successfully!', 'Success');
         return redirect() -> route('project.index');
     }
 

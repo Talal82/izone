@@ -12,7 +12,8 @@
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.2.0",
-        "oriceon/toastr-5-laravel": "dev-master"
+        "oriceon/toastr-5-laravel": "dev-master",
+        "santigarcor/laratrust": "5.0.*"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

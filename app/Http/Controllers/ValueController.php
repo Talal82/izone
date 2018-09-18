@@ -106,7 +106,8 @@ class ValueController extends Controller
 
         $value -> save();
 
-        Session::flash('success', 'Value Updated Successfully!');
+        // Session::flash('success', 'Value Updated Successfully!');
+        Toastr::success('Value Updated Successfully!', 'Success');
         return redirect() -> route('value.index');
     }
 
@@ -121,7 +122,8 @@ class ValueController extends Controller
         $value = Value::find($id);
         $value -> delete();
 
-        Session::flash('success', 'Value Deleted Successfully!');
+        // Session::flash('success', 'Value Deleted Successfully!');
+        Toastr::error('Value Deleted Successfully!', 'Success');
         return redirect() -> route('value.index');
     }
 }

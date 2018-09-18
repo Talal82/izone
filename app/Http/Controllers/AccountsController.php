@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Toastr;
 
 class AccountsController extends Controller
 {
@@ -42,7 +43,8 @@ class AccountsController extends Controller
         $user -> password = bcrypt($request -> new_password);
         $user -> save();
 
-        Session::flash('success', 'Password Changed Successfully');
+        // Session::flash('success', 'Password Changed Successfully');
+        Toastr::success('Password Changed Successfully!', 'Success');
         return redirect() -> back();
     }
 }
